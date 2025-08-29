@@ -1,0 +1,52 @@
+/*
+Use border-box sizing everywhere.
+Read: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+
+This generally makes it easier to size elements.
+ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  /* 
+  Without this, `height` will be set to `auto` which means that the document
+  height is determined by the height of its content. We typically prefer 100%
+  height layouts because this ensures that the full page is used regardless of
+  the interior content. For example, without this, a footer on a page with
+  little content would float up, leaving empty space beneath.
+  */
+  height: 100%;
+}
+
+body {
+  margin: 0; /* Get rid of any margin that browsers add by default */
+  line-height: 1.6; /* More spatious line-height for readability */
+  -webkit-font-smoothiing: antialiased; /* Better high DPI font rendering */
+}
+
+/* Good defaults for elements that should be layed out in blocks */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+Form elements use browser-native fonts by default. Instead, prefer to respect
+the parent element's font.
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Respect user system settings for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
