@@ -23,3 +23,15 @@ body {
     font-family: var(--font-family-title);
   }
 }
+
+.fa {
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
