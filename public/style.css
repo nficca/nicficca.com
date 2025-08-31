@@ -1,13 +1,13 @@
 :root {
   color-scheme: light dark;
-  --font-family-title: Georgia, serif;
-  --font-family: Arial, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-sans-serif: Arial, sans-serif;
   --color-text: light-dark(#000, #FFF);
   --color-bg: light-dark(#EEE, #242936);
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-sans-serif);
 
   color: var(--color-text);
   background-color: var(--color-bg);
@@ -20,7 +20,7 @@ body {
   h4,
   h5,
   h6 {
-    font-family: var(--font-family-title);
+    font-family: var(--font-serif);
   }
 }
 
